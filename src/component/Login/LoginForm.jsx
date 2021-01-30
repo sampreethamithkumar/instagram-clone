@@ -34,7 +34,6 @@ class LoginForm extends Form {
   };
 
   render() {
-    const { data, errors } = this.state;
     return (
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>

@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
-console.log(axios.defaults.baseURL);
+console.log(`BackEnd Connected to: ${axios.defaults.baseURL}`);
 
 axios.interceptors.response.use(null, (error) => {
   const expectedError =
@@ -22,10 +22,12 @@ function setJwt(jwt) {
   axios.defaults.headers.common["x-auth-token"] = jwt;
 }
 
-export default {
+const http = {
   get: axios.get,
   post: axios.post,
   put: axios.put,
   delete: axios.delete,
   setJwt,
 };
+
+export default http;

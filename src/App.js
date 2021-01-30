@@ -25,7 +25,7 @@ class App extends Component {
           <React.Fragment>
             <Header />
             <Switch>
-              <main class="container">
+              <main className="container">
                 <Route path="/home" component={Home} />
                 <Redirect to="/home" />
               </main>
