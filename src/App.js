@@ -6,6 +6,10 @@ import "./App.css";
 import NavBar from "./component/NavBar/NavBar";
 import Header from "./component/Header/Header";
 import Home from "./component/Home/Home";
+import Search from "./component/Search/Search";
+import AddImage from "./component/AddImage/AddImage";
+import Like from "./component/Like/Like";
+import Profile from "./component/Profile/Profile";
 import auth from "./services/authService";
 
 class App extends Component {
@@ -24,12 +28,16 @@ class App extends Component {
         {user && (
           <React.Fragment>
             <Header />
-            <Switch>
-              <main className="container">
+            <main className="container">
+              <Switch>
                 <Route path="/home" component={Home} />
-                <Redirect to="/home" />
-              </main>
-            </Switch>
+                <Route path="/search" component={Search} />
+                <Route path="/add" component={AddImage} />
+                <Route path="/like" component={Like} />
+                <Route path="/profile" component={Profile} />
+                <Redirect to="/profile" />
+              </Switch>
+            </main>
             <NavBar />
           </React.Fragment>
         )}
